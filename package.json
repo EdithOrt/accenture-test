@@ -1,0 +1,32 @@
+{
+  "name": "accenture-test",
+  "version": "1.0.0",
+  "description": "Accenture test with jascript",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdithOrt/accenture-test.git"
+  },
+  "keywords": [
+    "test",
+    "javascript",
+    "web",
+    "components",
+    "custom",
+    "componentes",
+    "seo",
+    "typescript"
+  ],
+  "author": "Edith Ort",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EdithOrt/accenture-test/issues"
+  },
+  "homepage": "https://github.com/EdithOrt/accenture-test#readme",
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}
