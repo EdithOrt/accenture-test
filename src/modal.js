@@ -1,4 +1,4 @@
-class Card extends HTMLElement {
+class Modal extends HTMLElement {
     type
     constructor() {
         super()
@@ -8,22 +8,38 @@ class Card extends HTMLElement {
 
 
     connectedCallback(){
-        this.querySelector("card");
         this.innerHTML = `
-        <article class="card">
-            <img alt='Edith's photography' /> 
-            <section> 
-                <div> social media icons </div> 
-                <div>
-                    <p>Edith Ortiz</p>
-                    <p> Front End developer</p> 
-                </div>
+        <style>
+            .overlay {
+                position: absolute;
+                height: 100vh;
+                width: 100%;
+                background: rgba(0,0,0,0.75);
+                z-index: 1;
+                top: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
 
-                <button type="${this.type}">Ver más</button>
-            </section> 
-        </article>
+            .modal{
+                background-color: white;
+                height: 80%;
+                width: 70%;
+                border-radius: 12px;
+            }
+        </style>
+        <section class="overlay">
+            <div class="modal">
+                <button>
+                    <img alt="Close icon" src=""/>
+                </button>
+                <embed src="" type="application/pdf" width=100% height=100%/>
+                <p>Modal</p>
+            </div>
+        </section>
         `
     }
 }
 
-window.customElements.define("card-component", Card)
+window.customElements.define("modal-component", Modal)
