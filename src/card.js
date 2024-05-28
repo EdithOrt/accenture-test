@@ -8,10 +8,9 @@ class Card extends HTMLElement {
     connectedCallback(){
         const type = "open"
 
-        const modal = document.querySelector('modal-component');
-        console.log({modal})
+        this.attachShadow({mode: 'open'});
 
-        this.innerHTML = `
+        this.shadowRoot.innerHTML = `
         <style>
             .card{
                 background-color: #EEEEEE;
@@ -30,11 +29,19 @@ class Card extends HTMLElement {
                     <p> Front End developer</p> 
                 </div>
 
-                <button-component type=${type}></button-component>
+                <button-component type=${type} id="open-button"></button-component>
             </section> 
         </article>
         `
+        this.shadowRoot.getElementById('open-button').addEventListener('click', this.openModal.bind(this))
     }
+
+    openModal() {
+        const modal = document.querySelector('modal-component');
+        if (modal) {
+          modal.open();
+        }
+      }
 }
 
 window.customElements.define("card-component", Card)

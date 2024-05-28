@@ -1,31 +1,30 @@
 class Modal extends HTMLElement {
     constructor() {
-        this.isOpen = false;
         super()
+        this.isOpen = false;
     }
 
 
 
     connectedCallback(){
-        const display = this.getAttribute('display')
-        console.log({display})
+        console.log({isOpen: this.isOpen})
         this.attachShadow({mode: 'open'});
 
         this.shadowRoot.innerHTML = `
         <style>
-            .backdrop {
+            :host .backdrop {
                 position: absolute;
                 height: 100vh;
                 width: 100%;
                 background: rgba(0,0,0,0.75);
                 z-index: 1;
                 top: 0;
-                display: flex;
                 align-items: center;
                 justify-content: center;
+                display: none;
             }
 
-            .backdrop--active{
+            :host([open]) .backdrop{
                 display: flex;
             }
 
@@ -38,7 +37,7 @@ class Modal extends HTMLElement {
         </style>
         <section class="backdrop">
             <div class="modal">
-                <button>
+                <button id="close-button">
                     <img alt="Close icon" src=""/>
                 </button>
 
@@ -46,7 +45,22 @@ class Modal extends HTMLElement {
             </div>
         </section>
         `
+
+        const closeButton = this.shadowRoot.getElementById('close-button');
+
+        if (closeButton) {
+            closeButton.addEventListener('click', this.close.bind(this));
+          }
+    }    
+
+    open() {
+      this.setAttribute('open', '');
     }
+
+    close() {
+        this.removeAttribute('open');
+        this.dispatchEvent(new Event('close'));
+      }
 }
 
 window.customElements.define("modal-component", Modal)
