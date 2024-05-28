@@ -5,6 +5,9 @@
     <title>Document</title>
     <script src="./src/card.js" type="module"></script>
     <script src="./src/modal.js" type="module"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -16,8 +19,8 @@
     </main>
 
     <modal-component id="modal-component">
-        <div slot="container">
-            <embed src="./assets/EDITH-ORTIZ-CV-es.pdf" type="application/pdf" width=80% height=80%/>
+        <div slot="container" id="modal-container">
+            <embed src="./assets/EDITH-ORTIZ-CV-es.pdf" type="application/pdf" width=90% height=90%/>
         </div>
     </modal-component>
 
