@@ -51,12 +51,16 @@ class Modal extends HTMLElement {
         const container = this.shadowRoot.getElementById('container');
 
         if (closeButton && backdrop) {
+            // close modal with close button
             closeButton.addEventListener('click', this.close.bind(this));
-            backdrop.addEventListener('click', this.close.bind(this))
+            // close modal with overlay
+            backdrop.addEventListener('click', this.close.bind(this));
+            // prevent clicks inside the modal content from propagating to the overlay
             container.addEventListener('click', e => e.stopPropagation());
+            // close modal when press ESC key
             document.addEventListener('keydown', this.handleKeydown.bind(this));
           }
-    }    
+    }
 
     open() {
       this.setAttribute('open', '');
