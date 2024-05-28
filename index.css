@@ -1,0 +1,47 @@
+* {
+    color: #000000;
+    font-family: "Inter", sans-serif;
+}
+
+
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+*::selection {
+    background-color: #7D7D7D;
+    color: white;
+}
+
+main{
+}
+
+aside {
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    margin-inline: auto; 
+    text-align: center;
+    margin-top: 24px;
+    font-weight: 800; 
+    font-size: 18px;     
+}
+
+#modal-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 48px);
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+}
