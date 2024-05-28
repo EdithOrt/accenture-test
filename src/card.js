@@ -16,15 +16,13 @@ class Card extends HTMLElement {
               background-color: #EEEEEE;
               border-radius: 8px;
               display: flex;
-              width: 400px;
+              width: 250px;
               padding: 16px;
-              gap: 32px;
+              gap: 16px;
             }
 
-            img{
-              width: 150px;
-              height: 150px;
-              border-radius: 50%;
+            img {
+              display: none;
             }
 
             section{
@@ -41,10 +39,12 @@ class Card extends HTMLElement {
             .name {
               font-weight: bold;
               margin: 10px 0;
+              text-align: center;
             }
 
             .position {
               margin-top: 0;
+              text-align: center;
             }
 
             .container-buttons {
@@ -60,6 +60,24 @@ class Card extends HTMLElement {
             .social-button:hover{
               svg path {
                 fill: black;
+              }
+            }
+
+            @media (min-width: 768px) {
+              .card {
+                gap: 32px;
+                width: 400px;
+              }
+
+              img {
+                display: block;
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+              }
+
+              .name, .position {
+                text-align: left;
               }
             }
         </style>

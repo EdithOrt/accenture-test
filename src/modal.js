@@ -19,6 +19,7 @@ class Modal extends HTMLElement {
                 background: rgba(0,0,0,0.75);
                 z-index: 1;
                 top: 0;
+                left: 0;
                 align-items: center;
                 justify-content: center;
                 display: none;
