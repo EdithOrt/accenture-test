@@ -6,8 +6,6 @@ class Card extends HTMLElement {
     }
 
     connectedCallback(){
-        const type = "open"
-
         this.attachShadow({mode: 'open'});
 
         this.shadowRoot.innerHTML = `
@@ -111,7 +109,7 @@ class Card extends HTMLElement {
                 </div>
 
                 <div class="container-button">
-                  <button-component type=${type} id="open-button"></button-component>
+                  <button-component id="open-button"></button-component>
                 </div>
             </section> 
         </article>

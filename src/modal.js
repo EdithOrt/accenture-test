@@ -1,13 +1,11 @@
 class Modal extends HTMLElement {
     constructor() {
         super()
-        this.isOpen = false;
     }
 
 
 
     connectedCallback(){
-        console.log({isOpen: this.isOpen})
         this.attachShadow({mode: 'open'});
 
         this.shadowRoot.innerHTML = `

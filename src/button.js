@@ -1,8 +1,6 @@
 class Button extends HTMLElement { 
     constructor() {
         super()
-        const type = this.getAttribute('type')
-        console.log(type)
     }
 
     connectedCallback(){
