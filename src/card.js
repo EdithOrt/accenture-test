@@ -6,8 +6,11 @@ class Card extends HTMLElement {
     }
 
     connectedCallback(){
-        const type = "open" 
-        this.querySelector("card");
+        const type = "open"
+
+        const modal = document.querySelector('modal-component');
+        console.log({modal})
+
         this.innerHTML = `
         <style>
             .card{

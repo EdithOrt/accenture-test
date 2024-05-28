@@ -1,16 +1,19 @@
 class Modal extends HTMLElement {
-    type
     constructor() {
+        this.isOpen = false;
         super()
-        this.type = "open"
     }
 
 
 
     connectedCallback(){
-        this.innerHTML = `
+        const display = this.getAttribute('display')
+        console.log({display})
+        this.attachShadow({mode: 'open'});
+
+        this.shadowRoot.innerHTML = `
         <style>
-            .overlay {
+            .backdrop {
                 position: absolute;
                 height: 100vh;
                 width: 100%;
@@ -22,6 +25,10 @@ class Modal extends HTMLElement {
                 justify-content: center;
             }
 
+            .backdrop--active{
+                display: flex;
+            }
+
             .modal{
                 background-color: white;
                 height: 80%;
@@ -29,13 +36,13 @@ class Modal extends HTMLElement {
                 border-radius: 12px;
             }
         </style>
-        <section class="overlay">
+        <section class="backdrop">
             <div class="modal">
                 <button>
                     <img alt="Close icon" src=""/>
                 </button>
-                <embed src="" type="application/pdf" width=100% height=100%/>
-                <p>Modal</p>
+
+                <slot name="container"></slot>
             </div>
         </section>
         `
