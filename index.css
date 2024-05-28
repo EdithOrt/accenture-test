@@ -1,0 +1,15 @@
+main{
+}
+
+aside {
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    margin-inline: auto; 
+    text-align: center;
+    margin-top: 24px;      
+}
