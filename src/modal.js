@@ -31,8 +31,8 @@ class Modal extends HTMLElement {
 
             .modal{
                 background-color: white;
-                height: 90%;
-                width: 70%;
+                height: 60%;
+                width: 95%;
                 border-radius: 12px;
             }
             
@@ -56,6 +56,13 @@ class Modal extends HTMLElement {
 
             #close-button:hover svg path{
                 fill: #7D7D7D;
+            }
+
+            @media (min-width: 640px) {
+              .modal {
+                height: 90%;
+                width: 70%;
+              }
             }
         </style>
         <section class="backdrop" id="backdrop">
